@@ -1,1 +1,2 @@
-A template to quickly get started with some front-end web development.
+# socrates
+analyze your emotions and shit
