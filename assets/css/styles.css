@@ -1,138 +1,329 @@
+@font-face {
+    font-family: "Ahamono";
+    src: url("../fonts/AHAMONO-Regular.otf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Now";
+    src: url("../fonts/Now-Medium.otf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Now";
+    src: url("../fonts/Now-Regular.otf");
+    font-weight: 300;
+}
+
+:root { /* Variables */
+
+    /* Fonts */
+    --font-family-now:           "Now", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-family-ahamono:       "Ahamono", "Courier New", Courier, monospace;
+    --font-family-helvetica:     "Helvetica Neue", Helvetica, sans-serif;
+    /* End Fonts */
+
+    /* Text colors */
+    --text-default-color:        #F6F6F6;
+    --text-project-color:        #59D8FF;
+    --text-placeholder-color:    #6D6D6D;
+    /* End Text colors */
+
+    /* Background colors */
+    --background-default-color:  #323232;
+    /* End Background colors */
+
+    /* z-indexes */
+    --z-index-1: 100;
+    --z-index-2: 200;
+    /* End z-indexes */
+
+    /* Ideas */
+    /* Organize variables by the modules they're associated with? */
+    /* --text-timer-highlight-color */
+    /* --background-timer-highlight-color */
+    /* --text-calendar-notToday-color */
+
+    /* A chemistry metaphor might work well here? */
+    /* --atom-molecule-modifier-reaction */
+}
+
+
+html {
+    font-size: 16px;
+    /* With a font ratio of 1.5 */
+}
+
 body {
-    background-color: #D1DAD9;
+
+    background-color: var(--background-default-color);
 
     width: 100%;
 
-    font-family: YuGothic, 'Yu Gothic', "游ゴシック体", "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
-    line-height: 1.266;
+    font-family: var(--font-family-ahamono);
+    color: var(--text-default-color);
+
+    line-height: 1.4;
     font-size: 100%;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* Placeholders */
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: #80878B;
+    color: #6D6D6D;
 }
 
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color: #80878B;
+   color: #6D6D6D;
    opacity:  1;
 }
 
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color: #80878B;
+   color: #6D6D6D;
    opacity:  1;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #80878B;
+   color: #6D6D6D;
 }
 
 :placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
-  color: #80878B;
+  color: #6D6D6D;
+}
+/* End Placeholder */
+
+/* Header */
+
+header {
+    margin-top: 3rem;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-/* Default spacing for every element based on golden ratio. */
-*+* {
-    margin-top: 1.618rem;
-}
-
-/* Start Header */
 .logo {
-    font-family: Arial, sans-serif;
-    font-weight: normal;
-    font-size: 1rem;
-    line-height: 1.4;
-    color: #23A087;
+    color: #A9A9A9;
 }
 
-.message {
-    color: #6B7073;
-}
 /* End Header */
 
-/* Start Footer */
-footer > p {
-    color: #6B7073;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1.4;
-}
-/* End Footer */
+/* Timer */
 
-/* Video */
-.video {
-    position: relative;
-
-	padding-bottom: 56.25%; /* 16:9 */
-
-	height: 0;
+.Timer {
+    margin-top: 2.5rem;
 }
 
-.video > iframe {
-    position: absolute;
-	top: 0;
-	left: 0;
-
-	width: 100%;
-	height: 100%;
-}
-/* End Video */
-
-/* Correct Form */
-
-.correctForm {
-    overflow: hidden; /* Clearfix */
-    clear: both;
+.Timer--status {
+    color: var(--text-project-color);
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-.correctForm--textArea {
-    /* Reset */
+.Timer--time {
+    text-align: center;
+    font-size: 5.0625rem;
+    font-family: var(--font-family-now);
+    font-weight: 400;
+}
+/* End Timer */
+
+/* Start Feedback */
+.Feedback {
+    margin-top: 1rem;
+}
+
+.Feedback--content {
     background: none;
-    resize: none;
     border: none;
-
-    border-radius: 3px;
-
-    color: #373B3A;
-    background-color: #B6BEBD;
+    resize: none;
 
     width: 100%;
 
-    height: 1.516875rem;
+    padding: 1.16rem 1rem;
+
+    background-color: #373737;
+
 }
 
-.correctForm--callToAction {
-    float: right;
+.Feedback--submit {
+    margin-top: 1.5rem;
 }
-/* End Correct Form */
+/* End Feedback */
 
-/* Multiple Styles */
-.button {
-    /* Reset */
+/* Btn */
+.btn {
     background: none;
     border: none;
 
-    border-radius: 3px;
+    background-color: #5E69FF;
 
-    background-color: #23A087;
-    color: #D6E0DF;
+    text-align: center;
+
+    font-family: var(--font-family-helvetica);
+    font-weight: 300;
+
+    padding: 0.45rem 0.66666rem;
+}
+
+.btn.btn-select {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.btn.btn-select > * {
+    display: inline-block;
+}
+/* End Btn */
+
+/* Selector */
+.Selector {
+    position: relative;
+}
+
+.Selector.Selector-btn {
+    background-color: #4753FB;
+
+    padding-left: 0.444rem;
+    padding-right: 0.444rem;
+}
+
+.Selector::after {
+    content: " ";
+    display: inline-block;
+
+    width: 0;
+    height: 0;
+
+    border-left: 0.666rem solid transparent;
+    border-right: 0.666rem solid transparent;
+    border-top: 0.666rem solid var(--text-default-color);
+}
+
+/* TOFIX: The arrow appears a bit lower than it should. It should be in the middle. */
+.Selector.Selector-btn::after {
+    border-left: 0.3rem solid transparent;
+    border-right: 0.3rem solid transparent;
+    border-top: 0.3rem solid var(--text-default-color);
+}
+
+.Selector--select {
+
+    background: none;
+    opacity: 0;
+    border: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
 
     font-size: 1rem;
-    font-weight: bold;
 
-    padding: 0.5rem 2rem;
+    z-index: var(--z-index-1);
+}
+/* End Selector */
+
+/* Calendar */
+.Calendar {
+    margin-top: 2.5rem;
 }
 
-.button[data-state~="submitting"] {
-    background-color: #717D7B;
-    color: #404847;
-    cursor: not-allowed;
+.Calendar--selector {
+    font-family: var(--font-family-now);
+    font-weight: 400;
+    font-size: 2.25rem;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+/* End Calendar */
+
+/* CalendarView (the actual calendar blocks) */
+
+.CalendarView {
+    border-top: 1px solid #2B2B2B;
 }
 
-/* End Button */
+.CalendarView--row {
+    overflow: hidden;
+    clear: both;
 
-/* Multiple Styles */
-header,
-.correctForm {
-    padding: 0 14px;
+    width: 100%;
+
+    border-bottom: 1px solid #2B2B2B;
+
 }
-/* End Multiple Styles */
+
+.CalendarView--day {
+
+    width: 14.2857%;
+    width: calc(100% / 7);
+    height: 44px; /* This is temporary */
+
+    float: left;
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: #373737;
+    border-right: 1px solid #2B2B2B;
+}
+
+.CalendarView--day.CalendarView--day-notMonth {
+    background-color: #484747; /* TODO: I'm not satisfied with this color. */
+}
+
+.CalendarView--day:last-child {
+    border-right: none;
+}
+
+.CalendarView--dayNumber {
+
+    font-family: var(--font-family-now);
+    font-size: 0.666rem;
+    font-weight: 300;
+
+    float: right;
+}
+/* End CalendarView */
+
+/* Stats */
+.Stats.Stats-month {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.Stats--entry {
+    color: var(--text-project-color);
+    font-family: var(--font-family-now);
+    font-weight: 300;
+}
+
+.Stats--entryContent {
+    color: var(--text-default-color);
+}
+
+/* End Stats */
+
+/* Day */
+.Day--selectedDay {
+    font-family: var(--font-family-now);
+    font-size: 1.5rem;
+}
+
+.DayEntries {
+    display: flex;
+}
+
+.DayEntry {
+
+    flex: 1 1 auto;
+
+    background-color: #373737;
+}
+/* End Day */

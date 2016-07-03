@@ -1,31 +1,49 @@
 
 (function () {
 
-    /* Some kind of CSS fix to make up for a bug. */
-    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-      var msViewportStyle = document.createElement('style')
-      msViewportStyle.appendChild(
-        document.createTextNode(
-          '@-ms-viewport{width:auto!important}'
-        )
-      )
-      document.querySelector('head').appendChild(msViewportStyle)
+    // autosize($(".js-correctform-textarea"));
+
+    var slice = Array.prototype.slice;
+
+    var dayCharts = document.querySelectorAll(".CalendarView--dayChart"),
+        dayChartsArray = slice.call(dayCharts);
+
+    dayChartsArray.forEach(function (element) {
+
+        var data = [
+    {
+        value: 300,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Red"
+    },
+    {
+        value: 50,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Green"
+    },
+    {
+        value: 100,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Yellow"
     }
+];
 
-    autosize($(".js-correctform-textarea"));
+        var canvas = document.createElement("canvas");
 
-    // TODO: Add a check to the form to see if there is at least one character in there and don't show the form unelss there is.
+        canvas.style.width = "36px"
+        canvas.style.height = "36px";
+        element.appendChild(canvas);
 
+        var ctx = canvas.getContext("2d"),
+            chart = new Chart(ctx).Pie(data, {
+                segmentShowStroke: false,
+                animateRotate: false,
+                animateScale: false,
+                showTooltips: false
+            });
 
-    // Submitting the form.
-    $(".js-correct-form").submit(function (e) {
-        e.preventDefault();
-        var $submitButton = $(".js-correctform-submitbutton");
-
-        $submitButton.attr("data-state", "submitting");
-        $submitButton.attr("disabled", "disabled");
-        $submitButton.attr("value", "提出中...");
     });
-
-
 }());
