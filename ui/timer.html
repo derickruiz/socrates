@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>socrates</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="../assets/css/reboot.css">
+        <link rel="stylesheet" href="../assets/css/styles.css">
+
+        <script>
+        /* Some kind of CSS fix to make up for a bug. */
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+          var msViewportStyle = document.createElement('style')
+          msViewportStyle.appendChild(
+            document.createTextNode(
+              '@-ms-viewport{width:auto!important}'
+            )
+          )
+          document.querySelector('head').appendChild(msViewportStyle)
+        }
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <header role="header">
+            <h1 class="logo">Socrates</h1>
+        </header>
+
+        <main id="app" role="main">
+            <div class="Screen">
+                <div class="Timers">
+                    <div class="Timer">
+                            <a href="#" class="Timer-name">Web Dev</a>
+                            <a class="Button Button--secondary">Edit</a>
+                            <a class="Button">Start</a>
+                    </div>
+                    <div class="Timer">
+                            <a href="#" class="Timer-name">Web Dev</a>
+                            <a class="Button Button--secondary">Edit</a>
+                            <a class="Button">Start</a>
+                    </div>
+                    <div class="Timer">
+                            <a href="#" class="Timer-name">Web Dev</a>
+                            <a class="Button Button--secondary">Edit</a>
+                            <a class="Button">Start</a>
+                    </div>
+                </div>
+
+                <p class="Message">You don't have any timers yet.</p>
+                <a class="Button">Create a timer</a>
+            </div>
+        </main>
+
+    </body>
+</html>
