@@ -140,6 +140,7 @@ header {
     border-bottom: 1px solid var(--border-button-default-color);
     text-transform: lowercase;
     padding-bottom: 0.19753rem;
+    color: var(--text-default-color);
 }
 
 .Button.Button--secondary {
