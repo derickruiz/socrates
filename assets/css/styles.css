@@ -32,7 +32,13 @@
 
     /* Background colors */
     --background-default-color:  #CCD0DA;
+    --background-timer-color:    #FAF8FB;
     /* End Background colors */
+
+    /* Border colors */
+    --border-button-default-color:       #71D766;
+    --border-button-secondary-color:     #EA6B00;
+    /* End Border colors */
 
     /* z-indexes */
     --z-index-1: 100;
@@ -51,8 +57,7 @@
 
 
 html {
-    font-size: 16px;
-    /* With a font ratio of 1.5 */
+    font-size: 17px; /* With a font ratio of 1.5 */
 }
 
 body {
@@ -95,6 +100,12 @@ body {
 }
 /* End Placeholder */
 
+/* Defaults */
+a {
+    text-decoration: none;
+}
+/* End Defaults */
+
 /* Header */
 
 header {
@@ -110,24 +121,60 @@ header {
 
 /* End Header */
 
+/* Button */
+
+.Button {
+    display: block;
+    border-bottom: 1px solid var(--border-button-default-color);
+    text-transform: lowercase;
+    padding-bottom: 0.19753rem;
+}
+
+.Button.Button--secondary {
+    border-bottom: 1px solid var(--border-button-secondary-color);
+}
+/* End Button */
+
+/* Screen */
+.Screen > .Button {
+    display: inline-block;
+}
+/* End Screen */
+
 /* Timer */
+.Timers,
+.Message,
+.Screen > .Button {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2.25rem;
+}
+
+.Timers > .Timer + .Timer {
+    margin-top: 1.5rem;
+}
 
 .Timer {
-    margin-top: 2.5rem;
+    padding: 1.5rem 1rem;
+    overflow: hidden;
+    background-color: var(--background-timer-color);
 }
 
-.Timer--status {
-    color: var(--text-project-color);
-    font-size: 1.5rem;
-    text-align: center;
+.Timer-name {
+    float: left;
+    text-transform: lowercase;
+    color: var(--text-default-color);
 }
 
-.Timer--time {
-    text-align: center;
-    font-size: 5.0625rem;
-    font-family: var(--font-family-now);
-    font-weight: 400;
+.Timer > .Button {
+    float: right;
+    margin-right: 1rem;
 }
+
+.Timer > .Button.Button--secondary {
+    margin-right: 0;
+}
+
 /* End Timer */
 
 /* Start Feedback */
