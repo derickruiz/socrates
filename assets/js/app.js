@@ -9,12 +9,15 @@
         },
         {
             timerName: "another timer"
-        }]    
+        }]
     };
+
+    // UI
     var CreateTimerButton = function () {
         return m("button", {class: "Button"}, "create a timer");
     };
 
+    // Routes
     var Home = {
         controller: function () {
 
@@ -28,6 +31,11 @@
                     controller.timers.map(function (timer, index) {
                         return m("div", timer.timerName);
                     }),
+                    CreateTimerButton()
+                ]);
+            } else {
+                return m("div", [
+                    m("div", "You don't have any timers yet"),
                     CreateTimerButton()
                 ]);
             }
