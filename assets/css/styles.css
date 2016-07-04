@@ -25,13 +25,13 @@
     /* End Fonts */
 
     /* Text colors */
-    --text-default-color:        #F6F6F6;
+    --text-default-color:        #0F0E12;
     --text-project-color:        #59D8FF;
     --text-placeholder-color:    #6D6D6D;
     /* End Text colors */
 
     /* Background colors */
-    --background-default-color:  #323232;
+    --background-default-color:  #CCD0DA;
     /* End Background colors */
 
     /* z-indexes */
@@ -105,7 +105,7 @@ header {
 }
 
 .logo {
-    color: #A9A9A9;
+    color: var(--text-default-color);
 }
 
 /* End Header */
