@@ -28,6 +28,7 @@
     --text-default-color:        #0F0E12;
     --text-project-color:        #59D8FF;
     --text-placeholder-color:    #6D6D6D;
+    --text-inputfield-color:     #EA6B00;
     /* End Text colors */
 
     /* Background colors */
@@ -38,12 +39,19 @@
     /* Border colors */
     --border-button-default-color:       #71D766;
     --border-button-secondary-color:     #EA6B00;
+    --border-inputfield-color:           #EA6B00;
     /* End Border colors */
 
     /* z-indexes */
     --z-index-1: 100;
     --z-index-2: 200;
     /* End z-indexes */
+
+    /* Font scale */
+    --fontScale-one-down: 0.666rem;
+    --fontScale-default: 1rem;
+    --fontScale-one-Up: 1.5rem;
+    /* End font scale */
 
     /* Ideas */
     /* Organize variables by the modules they're associated with? */
@@ -104,6 +112,10 @@ body {
 a {
     text-decoration: none;
 }
+
+label {
+    display: block;
+}
 /* End Defaults */
 
 /* Header */
@@ -144,7 +156,8 @@ header {
 /* Timer */
 .Timers,
 .Message,
-.Screen > .Button {
+.Screen > .Button,
+.Form {
     margin-left: 1rem;
     margin-right: 1rem;
     margin-top: 2.25rem;
@@ -176,6 +189,33 @@ header {
 }
 
 /* End Timer */
+
+/* Form */
+
+.Form > .InputField + .InputField {
+    margin-top: var(--fontScale-default);
+}
+
+.InputField {
+    border-bottom: 1px solid var(--border-inputfield-color);
+}
+
+.InputField > input {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+
+    padding-top: var(--fontScale-one-down);
+    padding-bottom: var(--fontScale-one-down);
+}
+
+.InputField-label {
+    display: block;
+    font-size: var(--fontScale-one-down);
+    color: var(--text-inputfield-color);
+}
+/* End Form */
 
 /* Start Feedback */
 .Feedback {
