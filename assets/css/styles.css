@@ -34,6 +34,7 @@
     /* Background colors */
     --background-default-color:  #CCD0DA;
     --background-timer-color:    #FAF8FB;
+    --background-feedback-color: #C7CBD5;
     /* End Background colors */
 
     /* Border colors */
@@ -116,6 +117,16 @@ a {
 label {
     display: block;
 }
+
+.Timers,
+.Message,
+.Screen > .Button,
+.Form,
+.TimerDisplay {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2.25rem;
+}
 /* End Defaults */
 
 /* Header */
@@ -136,6 +147,9 @@ header {
 /* Button */
 
 .Button {
+    -webkit-appearance: none;
+    background: none;
+    border: none;
     display: block;
     border-bottom: 1px solid var(--border-button-default-color);
     text-transform: lowercase;
@@ -155,14 +169,6 @@ header {
 /* End Screen */
 
 /* Timer */
-.Timers,
-.Message,
-.Screen > .Button,
-.Form {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-top: 2.25rem;
-}
 
 .Timers > .Timer + .Timer {
     margin-top: 1.5rem;
@@ -191,9 +197,26 @@ header {
 
 /* End Timer */
 
+/* Start TimerDisplay */
+.TimerDisplay {
+    font-size: 32vw;
+    text-align: center;
+}
+/* End TimerDisplay */
+
 /* Form */
 
-.Form > .InputField + .InputField {
+.Form.Form--fullWidth {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.Form.Form--fullWidth > *:not(.Feedback) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.Form > *+* {
     margin-top: var(--fontScale-default);
 }
 
@@ -216,30 +239,20 @@ header {
     font-size: var(--fontScale-one-down);
     color: var(--text-inputfield-color);
 }
-/* End Form */
 
-/* Start Feedback */
 .Feedback {
-    margin-top: 1rem;
-}
-
-.Feedback--content {
     background: none;
     border: none;
     resize: none;
 
     width: 100%;
 
-    padding: 1.16rem 1rem;
+    padding: 1.5rem 1rem;
 
-    background-color: #373737;
-
+    background-color: var(--background-feedback-color);
 }
 
-.Feedback--submit {
-    margin-top: 1.5rem;
-}
-/* End Feedback */
+/* End Form */
 
 /* Btn */
 .btn {

@@ -33,26 +33,13 @@
 
         <main id="app" role="main">
             <div class="Screen">
-                <div class="Timers">
-                    <div class="Timer">
-                            <a href="#" class="Timer-name">Web Dev</a>
-                            <a class="Button Button--secondary">Edit</a>
-                            <a class="Button">Start</a>
-                    </div>
-                    <div class="Timer">
-                            <a href="#" class="Timer-name">Web Dev</a>
-                            <a class="Button Button--secondary">Edit</a>
-                            <a class="Button">Start</a>
-                    </div>
-                    <div class="Timer">
-                            <a href="#" class="Timer-name">Web Dev</a>
-                            <a class="Button Button--secondary">Edit</a>
-                            <a class="Button">Start</a>
-                    </div>
-                </div>
+                <div class="TimerDisplay">19:45</div>
 
-                <p class="Message">You don't have any timers yet.</p>
-                <a class="Button">Create a timer</a>
+                <form class="Form Form--fullWidth">
+                    <textarea class="Feedback" placeholder="What did you do? How did you feel?"></textarea>
+                    <input type="submit" class="Button" value="save">
+                </form>
+                
             </div>
         </main>
 
