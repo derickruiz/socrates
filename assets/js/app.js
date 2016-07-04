@@ -2,21 +2,24 @@
 
     var app = document.getElementById("app");
 
+    // Data
+    var data = {
+        timers: [{
+            timerName: "web dev"
+        },
+        {
+            timerName: "another timer"
+        }]    
+    };
     var CreateTimerButton = function () {
         return m("button", {class: "Button"}, "create a timer");
     };
 
     var Home = {
         controller: function () {
-            var timers = [{
-                timerName: "web dev"
-            },
-            {
-                timerName: "another timer"
-            }];
 
             return {
-                timers: timers
+                timers: data.timers
             }
         },
         view: function (controller) {
