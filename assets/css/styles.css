@@ -17,22 +17,24 @@
     /* End Fonts */
 
     /* Text colors */
-    --text-default-color:        #0F0E12;
+    --text-default-color:        #fff;
     --text-project-color:        #59D8FF;
     --text-placeholder-color:    #6D6D6D;
-    --text-inputfield-color:     #EA6B00;
+    --text-inputfield-color:     rgb(255, 54, 129);
     /* End Text colors */
 
     /* Background colors */
-    --background-default-color:  #CCD0DA;
+    --background-default-color:  #171717;
     --background-timer-color:    #FAF8FB;
-    --background-feedback-color: #C7CBD5;
+    --background-feedback-color: #1f1f1f;
     /* End Background colors */
 
     /* Border colors */
-    --border-button-default-color:       #71D766;
-    --border-button-secondary-color:     #EA6B00;
-    --border-inputfield-color:           #EA6B00;
+    --border-button-default-color:       #383838;
+    --border-button-primary-color:       #5EB3C8;
+    --border-button-secondary-color:     #FF5D00;
+    --border-inputfield-color:           #e41260;
+    --border-timer-color:                #e41260;
     /* End Border colors */
 
     /* z-indexes */
@@ -75,6 +77,12 @@ body {
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+header,
+main {
+    max-width: 414px;
+    margin: 0 auto;
 }
 
 /* Placeholders */
@@ -139,6 +147,7 @@ header {
 /* Button */
 
 .Button {
+    cursor: pointer;
     -webkit-appearance: none;
     background: none;
     border: none;
@@ -149,7 +158,13 @@ header {
     color: var(--text-default-color);
 }
 
-.Button.Button--secondary {
+.Button:hover {
+    color: var(--border-button-primary-color);
+    border-bottom: 1px solid var(--border-button-primary-color);
+}
+
+.Button.Button--secondary:hover {
+    color: var(--border-button-secondary-color);
     border-bottom: 1px solid var(--border-button-secondary-color);
 }
 /* End Button */
@@ -169,7 +184,8 @@ header {
 .Timer {
     padding: 1.5rem 1rem;
     overflow: hidden;
-    background-color: var(--background-timer-color);
+    background-color: transparent;
+    border: 1px solid var(--border-timer-color);
 }
 
 .Timer-name {
@@ -191,7 +207,7 @@ header {
 
 /* Start TimerDisplay */
 .TimerDisplay {
-    font-size: 32vw;
+    font-size: 26vw;
     text-align: center;
 }
 /* End TimerDisplay */
