@@ -1,27 +1,19 @@
-@font-face {
-    font-family: "Ahamono";
-    src: url("../fonts/AHAMONO-Regular.otf");
-    font-weight: 300;
-}
+@import url("//hello.myfonts.net/count/31c3f2");
 
 @font-face {
-    font-family: "Now";
-    src: url("../fonts/Now-Medium.otf");
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Now";
-    src: url("../fonts/Now-Regular.otf");
-    font-weight: 300;
+    font-family: 'Sys-Book';
+    src: url('../fonts/31C3F2_0_0.eot');
+    src: url('../fonts/31C3F2_0_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/31C3F2_0_0.woff2') format('woff2'),
+    url('../fonts/31C3F2_0_0.woff') format('woff'),
+    url('../fonts/31C3F2_0_0.ttf') format('truetype');
 }
 
 :root { /* Variables */
 
     /* Fonts */
-    --font-family-now:           "Now", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-family-ahamono:       "Ahamono", "Courier New", Courier, monospace;
-    --font-family-helvetica:     "Helvetica Neue", Helvetica, sans-serif;
+    --font-family-main:          Sys-Book, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-family-helvetica:     "Helvetica Neue", Helvetica, Arial, sans-serif;
     /* End Fonts */
 
     /* Text colors */
@@ -75,7 +67,7 @@ body {
 
     width: 100%;
 
-    font-family: var(--font-family-ahamono);
+    font-family: var(--font-family-main);
     color: var(--text-default-color);
 
     line-height: 1.4;
@@ -335,7 +327,7 @@ header {
 }
 
 .Calendar--selector {
-    font-family: var(--font-family-now);
+    font-family: var(--font-family-main);
     font-weight: 400;
     font-size: 2.25rem;
 
@@ -385,7 +377,7 @@ header {
 
 .CalendarView--dayNumber {
 
-    font-family: var(--font-family-now);
+    font-family: var(--font-family-main);
     font-size: 0.666rem;
     font-weight: 300;
 
@@ -401,7 +393,7 @@ header {
 
 .Stats--entry {
     color: var(--text-project-color);
-    font-family: var(--font-family-now);
+    font-family: var(--font-family-main);
     font-weight: 300;
 }
 
@@ -413,7 +405,7 @@ header {
 
 /* Day */
 .Day--selectedDay {
-    font-family: var(--font-family-now);
+    font-family: var(--font-family-main);
     font-size: 1.5rem;
 }
 
