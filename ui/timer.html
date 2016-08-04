@@ -33,15 +33,46 @@
 
         <main id="app" role="main">
             <div class="Screen">
-                <div class="TimerDisplay">19:45</div>
+                <div id="timerdisplay" class="TimerDisplay">19:45</div>
 
-                <form class="Form Form--fullWidth">
-                    <textarea class="Feedback" placeholder="What did you do? How did you feel?"></textarea>
+                <form id="feedbackform" hidden="hidden" class="Form Form--fullWidth">
+                    <textarea id="feedbackform-textarea" class="Feedback" placeholder="What did you do? How did you feel?"></textarea>
                     <input type="submit" class="Button" value="save">
                 </form>
 
             </div>
         </main>
+
+        <script src="../assets/js/vendor/Timer.js"></script>
+
+        <script>
+
+        function millisToMinutesAndSeconds(millis) {
+            var minutes = Math.floor(millis / 60000);
+            var seconds = ((millis % 60000) / 1000).toFixed(0);
+
+            return (minutes <= 0 ? '00' : '0') + ":" + (seconds < 10 ? '0' : '') + seconds;
+        }
+
+        var time = 2; // 1 minutes
+        var timerDisplay = document.getElementById("timerdisplay");
+        var feedbackForm = document.getElementById("feedbackform");
+        var feedbackFormTextarea = document.getElementById("feedbackform-textarea");
+
+        var myTimer = new Timer({
+            tick    : 1,
+            ontick  : function(ms) {
+                timerDisplay.innerHTML = millisToMinutesAndSeconds(ms);
+            },
+            onend: function () {
+                timerDisplay.innerHTML = '00:00';
+                feedbackForm.removeAttribute("hidden");
+                feedbackFormTextarea.focus();
+            }
+        });
+
+        myTimer.start(time);
+        </script>
 
     </body>
 </html>
